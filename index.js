@@ -1,31 +1,27 @@
 const express = require('express')
 const fs = require('fs')
 const app = express()
+const router = require('./routes/login_criar')
 
 const dadosLocais = JSON.parse(fs.readFileSync("dados.json"))
-
 app.use(express.json())
+app.use(router)
+
 
 app.get('/', (req, res) => {
     res.status(200).send("OK");
 })
 
-app.post('/login', (req, res) => {
-    res.status(200).send("OK Login");
-})
-
-app.post('/criar', (req, res) => {
-    res.status(200).send("OK Criar");
-})
-
-app.post('/usuarios', (req, res) => {
-    const { nome, email, saldo } = req.body
-    const dadosProcessados = { nome, email, saldo }
-    dadosLocais.push(dadosProcessados)
-    const dadosConvertidos = JSON.stringify(dadosLocais, null, 2)
-    fs.writeFileSync('dados.json', dadosConvertidos)
-    res.status(200).send("OK Usuários");
-})
+// == Endpoint para cadastro de dados local ==
+//
+// app.post('/usuarios', (req, res) => {
+//     const { nome, email, saldo } = req.body
+//     const dadosProcessados = { nome, email, saldo }
+//     dadosLocais.push(dadosProcessados)
+//     const dadosConvertidos = JSON.stringify(dadosLocais, null, 2)
+//     fs.writeFileSync('dados.json', dadosConvertidos)
+//     res.status(200).send("OK Usuários");
+// })
 
 // == Inicio endpoints de exemplo ==
 //
@@ -36,7 +32,8 @@ app.post('/usuarios', (req, res) => {
 //     { nome: 'Eduardo', idade: 22 },
 // ]
 //
-// Route Params exemple
+// == Route Params exemple ==
+//
 // app.get('/usuarios/:idade', (req, res) => {
 //     const { idade } = req.params
 //     const usuario = usuarios.find((usuarios) => {
@@ -48,8 +45,9 @@ app.post('/usuarios', (req, res) => {
 //         res.status(404).send('O usuário não foi encontrado')
 //     }
 // })
-
-// Querys exemple
+//
+// == Querys exemple ==
+//
 // app.get('/usuarios', (req, res) => {
 //     const { idade } = req.query
 //     console.log(req.query)
