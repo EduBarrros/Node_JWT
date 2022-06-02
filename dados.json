@@ -10,5 +10,11 @@
     "email": "test1234@gmail.com",
     "dados": {},
     "hash": "$2b$10$4XlxNffYh516ZDKWJ9FozeafsdOK8gyqyY4f4dQF.vnTwtDu94FMS"
+  },
+  {
+    "nome": "Ricardo",
+    "email": "Ricardo@gmail.com",
+    "dados": {},
+    "hash": "$2b$10$nmMvUTyCluKlj6QlO0XdP.yX7vrcCxGBNrbfokbcPk0Wv3Ty4nz4K"
   }
 ]
