@@ -1,20 +1,10 @@
 [
   {
-    "nome": "Lucas",
-    "email": "test123@gmail.com",
+    "id": 77127748,
+    "nome": "Eduardo",
+    "email": "Ricardo@gmail.com.br",
     "dados": {},
-    "hash": "$2b$10$lIC7ywpyGoS2vDPFB1kWzeLHCa9Gr8dKYrixUetQF0WCgJiwnhTl."
-  },
-  {
-    "nome": "Pedro",
-    "email": "test1234@gmail.com",
-    "dados": {},
-    "hash": "$2b$10$4XlxNffYh516ZDKWJ9FozeafsdOK8gyqyY4f4dQF.vnTwtDu94FMS"
-  },
-  {
-    "nome": "Ricardo",
-    "email": "Ricardo@gmail.com",
-    "dados": {},
-    "hash": "$2b$10$nmMvUTyCluKlj6QlO0XdP.yX7vrcCxGBNrbfokbcPk0Wv3Ty4nz4K"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6NzcxMjc3NDgsImlhdCI6MTY1NDIxODU0OX0.AdDJDm1_F-qwOcdfFIpyGUeFBmWPP_4Jd04xaSsnfGw",
+    "hash": "$2b$10$O8I8EidUbWrYkEZ2gkNhy.AaY6fsD/6./dbSkTJvIOjLYbpIBee/u"
   }
 ]

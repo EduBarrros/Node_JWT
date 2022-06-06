@@ -2,6 +2,7 @@ const express = require('express')
 const bcrypt = require('bcrypt')
 const fs = require('fs')
 const router = express.Router()
+const jwt = require('jsonwebtoken')
 
 const dadosLocais = JSON.parse(fs.readFileSync("dados.json"))
 
@@ -25,7 +26,8 @@ router.post('/login', (req, res) => {
     res.status(200).send({
         nome: usuario.nome,
         email: usuario.email,
-        dados: usuario.dados
+        dados: usuario.dados,
+        token: usuario.token
     })
 })
 
@@ -37,10 +39,12 @@ router.post('/criar', (req, res) => {
         res.status(401).send('Nome ou email de usuário já está em uso.')
     } else {
         var dadosUsuario = {
+            id: Math.floor(Math.random() * 99999999),
             nome: nome,
             email: email,
             dados: {}
         }
+        dadosUsuario.token = jwt.sign({ Id: dadosUsuario.id }, "KEY_SECRETA")
         const salt = bcrypt.genSaltSync(10)
         dadosUsuario.hash = bcrypt.hashSync(senha, salt)
         dadosLocais.push(dadosUsuario)
